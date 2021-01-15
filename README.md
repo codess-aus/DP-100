@@ -14,6 +14,8 @@
 * determine appropriate compute specifications for a training workload
 * create compute targets for experiments and training
 
+[My Notes on Setting up an Azure Machine Learning Workspace]()
+
 # Run Experiments and Train Models (25-30%)
 
 ## Create models by using Azure Machine Learning Designer
@@ -37,6 +39,8 @@
 * pass data between steps in a pipeline
 * run a pipeline
 * monitor pipeline runs
+
+[My Notes on Running Experiments and Training Models]()
 
 # Optimize and Manage Models (20-25%)
 
@@ -65,6 +69,8 @@
 * monitor model usage
 * monitor data drift
 
+[My Notes on Optimizing and Managing Models]()
+
 # Deploy and Consume Models (20-25%)
 
 ## Create production compute targets
@@ -84,3 +90,5 @@
 * create a target compute resource
 * configure an Inference pipeline
 * consume a deployed endpoint
+
+[My Notes on Deploying and Consuming Models]()
