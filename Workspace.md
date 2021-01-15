@@ -1,4 +1,4 @@
-# ## Set up an Azure Machine Learning Workspace (30-35%)
+# Set up an Azure Machine Learning Workspace (30-35%)
 * create an Azure Machine Learning workspace
 * configure workspace settings
 * manage a workspace by using Azure Machine Learning studio
