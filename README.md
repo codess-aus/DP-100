@@ -14,7 +14,7 @@
 * determine appropriate compute specifications for a training workload
 * create compute targets for experiments and training
 
-[My Notes on Setting up an Azure Machine Learning Workspace]()
+[My Notes on Setting up an Azure Machine Learning Workspace](https://github.com/msandfor/DP-100/blob/main/Workspace.md)
 
 # Run Experiments and Train Models (25-30%)
 
@@ -40,7 +40,7 @@
 * run a pipeline
 * monitor pipeline runs
 
-[My Notes on Running Experiments and Training Models]()
+[My Notes on Running Experiments and Training Models](https://github.com/msandfor/DP-100/blob/main/Experiment.md)
 
 # Optimize and Manage Models (20-25%)
 
@@ -69,7 +69,7 @@
 * monitor model usage
 * monitor data drift
 
-[My Notes on Optimizing and Managing Models]()
+[My Notes on Optimizing and Managing Models](https://github.com/msandfor/DP-100/blob/main/Optimize.md)
 
 # Deploy and Consume Models (20-25%)
 
@@ -91,4 +91,4 @@
 * configure an Inference pipeline
 * consume a deployed endpoint
 
-[My Notes on Deploying and Consuming Models]()
+[My Notes on Deploying and Consuming Models](https://github.com/msandfor/DP-100/blob/main/deploy.md)
