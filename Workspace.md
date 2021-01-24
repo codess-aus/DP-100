@@ -66,3 +66,11 @@ Authentication to your Azure Machine Learning workspace is based on Azure Active
 * Service principal: You create a service principal account in Azure Active Directory, and use it to authenticate or get a token. A service principal is used when you need an automated process to authenticate to the service without requiring user interaction. For example, a continuous integration and deployment script that trains and tests a model every time the training code changes.
 
 * Managed identity: When using the Azure Machine Learning SDK on an Azure Virtual Machine, you can use a managed identity for Azure. This workflow allows the VM to connect to the workspace using the managed identity, without storing credentials in Python code or prompting the user to authenticate. Azure Machine Learning compute clusters can also be configured to use a managed identity to access the workspace when training models.
+
+You should deploy an Azure Machine Learning compute cluster. Azure Machine Learning compute clusters 
+are scalable machine learning platforms that consist of one or more CPU or GPU nodes. Cluster resources 
+can be shared with other users in the machine learning workspace. Compute clusters support: 
+• AutoML, which is used to automate the process of training and tuning machine learning models. 
+Machine learning pipelines, which are machine learning workflows. 
+• Azure Machine Learning designer, which facilitates graphical, drag-and-drop creation of machine 
+learning models.
