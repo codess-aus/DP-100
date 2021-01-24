@@ -32,3 +32,11 @@ The Select Columns in Dataset module supports several methods for identifying co
 
 A substitution value is an explicit value that is used to replace missing values. For example, you may replace missing values with a zero.
 
+**SMOTE** is a statistical technique used to append number of cases to your dataset and ensure balance for the new samples created. This technique can be used to remove imbalance of a certain class in your dataset.
+
+**Normalize Data module** is used to normalize columns within the dataset to eliminate bias that might be caused by large differences in the unit of values present in a column.You can normalize column values in such cases to fall between O and 1.
+
+**Partition and Sample module**. This module helps create partition of the source dataset and maintain the same ratio of values. This is useful to reduce the size of the dataset and not eliminate imbalance of the source data.
+
+**Split Data module**. The Split Data module is used to divide the dataset into two distinct sets based on the splitting mode provided. This is useful when training models by creating a training set and a testing set.
+
