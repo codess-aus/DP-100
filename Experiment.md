@@ -21,3 +21,6 @@
 * pass data between steps in a pipeline
 * run a pipeline
 * monitor pipeline runs
+
+The **scikit-learn estimator** provides a simple way of launching an SKLearn training job on a compute target. It is implemented through the scikit-learn class, which can be used to support single-node CPU training.
+
