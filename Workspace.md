@@ -67,10 +67,20 @@ Authentication to your Azure Machine Learning workspace is based on Azure Active
 
 * Managed identity: When using the Azure Machine Learning SDK on an Azure Virtual Machine, you can use a managed identity for Azure. This workflow allows the VM to connect to the workspace using the managed identity, without storing credentials in Python code or prompting the user to authenticate. Azure Machine Learning compute clusters can also be configured to use a managed identity to access the workspace when training models.
 
-You should deploy an Azure Machine Learning compute cluster. Azure Machine Learning compute clusters 
-are scalable machine learning platforms that consist of one or more CPU or GPU nodes. Cluster resources 
-can be shared with other users in the machine learning workspace. Compute clusters support: 
-• AutoML, which is used to automate the process of training and tuning machine learning models. 
-Machine learning pipelines, which are machine learning workflows. 
-• Azure Machine Learning designer, which facilitates graphical, drag-and-drop creation of machine 
-learning models.
+An Azure Machine Learning compute cluster:
+Azure Machine Learning compute clusters are scalable machine learning platforms that consist of one or more CPU or GPU nodes. Cluster resources can be shared with other users in the machine learning workspace. Compute clusters support:
+
+* AutoML, which is used to automate the process of training and tuning machine learning models.
+* Machine learning pipelines, which are machine learning workflows.
+* Azure Machine Learning designer, which facilitates graphical, drag-and-drop creation of machine learning models.
+
+An Azure Machine Learning compute target is a computing resource where machine learning experiments can be run. Azure supports a variety of compute target types, including your local computer, a remote virtual machine (VM), and Azure Machine Learning compute clusters. You can create an Azure Machine Learning compute target cluster using the az ml computetarget create amlcompute command.
+
+Compute clusters are highly scalable targets that consist of one or more compute nodes, and a cluster can scale up or down dynamically based on workload. You can control the maximum number of nodes in the cluster by using the required --max-nodes parameter. By specifying the minimum number of nodes as O, you can ensure that all active nodes will be terminated when jobs are not running. This will prevent Azure compute costs from accruing during idle times.
+
+The idle seconds parameter allows you to control how long a compute cluster must be idle before unneeded resources are deprovisioned. This allows you to ensure that intermittent pauses in machine learning jobs do not cause unnecessary waiting time as nodes are provisioned and deprovisioned.
+
+A compute instance is a single Azure-based VM used for machine learning experiments. You can use compute instances to support automated machine learning (AutoML) and machine learning pipelines.
+
+An Azure Data Factory (ADF) compute target is used to create machine learning pipelines. ADF facilitates ingestion and batch processing of data in order to provide predictive analytics.
+
