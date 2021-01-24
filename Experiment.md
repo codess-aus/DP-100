@@ -54,3 +54,17 @@ analyzes the data without losing meaning.
 **Join Data module**. This module is used to merge two datasets using a database-style join operation.
 
 **Clip Values module**. This module allows you to replace data values that are above or below a specified threshold with a mean, a constant, or other substitute value.
+
+**Inference cluster**. In order to host a real-time web service endpoint, you would have to create a cluster consisting of an Azure Kubernetes Service (AKS) instance or Azure Container Instance (ACI) managed by Azure. AKS is recommended for production use, while ACI is used primarily for small models or for development/testing purposes. This is the only type of cluster that is supported for deploying an 
+inference pipeline as a hosted real-time service.
+
+Compute instance, compute cluster, and attached compute are not supported to run inference pipelines as a real-time service. These clusters are more suited to host training and batch pipelines.
+
+Specify a virtual network and ensure **head and worker nodes** can communicate with each other. Training video game machine learning models uses a process known as reinforcement learning (RL). RL machine learning agents take actions and then observe the results as a way of seeking rewards. Because RL is compute intense, it is typically performed across multiple compute nodes, known as head and worker nodes. In Azure Machine Learning, RL requires that you specify a virtual network that does not block the ports that nodes need to communicate.
+
+You create a file dataset to reference the unstructured file or files you want to use in your machine learning experiments. In machine learning experiments, a FileDataset may be downloaded to compute targets or stored elsewhere and mounted to the experiment.
+
+The **Estimator class** can be used when a predefined machine learning framework estimator does not already exist in Azure Machine Learning. For reinforcement learning, Azure Machine Learning provides the ReinforcementLearningEstimator class.
+
+**SKLearn class** is used when running Scikit-learn training scripts. Scikit-learn is a Python-based machine learning library that only supports single-node compute targets.
+
