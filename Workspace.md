@@ -84,3 +84,10 @@ A compute instance is a single Azure-based VM used for machine learning experime
 
 An Azure Data Factory (ADF) compute target is used to create machine learning pipelines. ADF facilitates ingestion and batch processing of data in order to provide predictive analytics.
 
+Use Azure ML compute cluster to tune hyperparameters using Azure ML designer. This is the only training target that is supported by Azure ML designer for Automated ML jobs running hyperparameter tuning.
+
+Select Remote VM when using your own virtual machine (VM) for hyperparameter tuning. Azure ML supports bringing in a VM that is reachable by Azure ML. You can have the VM attached to your virtual network. This provides the benefit of leveraging environments like conda or Python as well as running training in a containerized environment.
+
+Select Azure HDlnsight to use Apache Spark to train your models. Azure HDlnsight provides a pre-configured environment with Apache Spark.
+
+Select Azure ML compute cluster to auto scale instances for models based on compute requirements. Azure ML compute cluster can be configured to scale up when training jobs are submitted.
