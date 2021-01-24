@@ -24,11 +24,15 @@
 
 The **scikit-learn estimator** provides a simple way of launching an SKLearn training job on a compute target. It is implemented through the scikit-learn class, which can be used to support single-node CPU training.
 
-Azure Machine Learning pipeline modules can validate, analyze, and transform your data to ensure your models are accurate. As you link pipeline modules, you control what data flows from one module to the next in your workflow. You can use the **Select Columns in Dataset module** to identify the columns that should be processed and sent to the next pipeline element. By default, no columns are selected, and you will receive an error indicating that a value is required until you select at least one column.
+Azure Machine Learning pipeline modules can validate, analyze, and transform your data to ensure your models are accurate. As you link pipeline modules, you control what data flows from one module to the next in your workflow.
+
+**Select Columns in Dataset module** to identify the columns that should be processed and sent to the next pipeline element. By default, no columns are selected, and you will receive an error indicating that a value is required until you select at least one column.
 
 The Select Columns in Dataset module supports several methods for identifying columns. You can select columns by name, type, or column index. As part of this process, you can define conditions that can filter your data based on type. For example, you could create a condition to exclude all string column types.
 
-**Clean Missing Data module**: You use the Clean Missing Data module to ensure that your data is as complete as possible prior to machine learning processing. When configuring this module, you need to specify the columns that contain missing values that you need to modify.
+Select Column in Dataset is used to specify which columns are included in the next activity of the training pipeline. It will not allow you to remove rows that do not contain values.
+
+**Clean Missing Data module**: You use the Clean Missing Data module to ensure that your data is as complete as possible prior to machine learning processing. When configuring this module, you need to specify the columns that contain missing values that you need to modify. You can configure the module to remove the entire row when the revenue column is empty. This keeps the rows in the original dataset, but the removed rows are not to be used in the model training.
 
 A substitution value is an explicit value that is used to replace missing values. For example, you may replace missing values with a zero.
 
@@ -38,7 +42,10 @@ A substitution value is an explicit value that is used to replace missing values
 
 *Normalization* is a technique that is often applied as part of data preparation for machine learning. You would change the numeric data in the columns to use a common scale without distorting differences in the range of values or losing information.
 
-**Partition and Sample module**. This module helps create partition of the source dataset and maintain the same ratio of values. This is useful to reduce the size of the dataset and not eliminate imbalance of the source data.
+Normalize Data allows you to configure all columns that contain numerical data to have the same scale without losing information. This will allow the training step to eliminate bias that could be associated with higher values because of certain column value units.
+
+**Partition and Sample module**. This module helps create partition of the source dataset and maintain the same ratio of values. This is useful to reduce the size of the dataset and not eliminate imbalance of the source data. This module performs sampling on a dataset and 
+analyzes the data without losing meaning.
 
 **Split Data module**. The Split Data module is used to divide the dataset into two distinct sets based on the splitting mode provided. This is useful when training models by creating a training set and a testing set.
 
@@ -47,4 +54,3 @@ A substitution value is an explicit value that is used to replace missing values
 **Join Data module**. This module is used to merge two datasets using a database-style join operation.
 
 **Clip Values module**. This module allows you to replace data values that are above or below a specified threshold with a mean, a constant, or other substitute value.
-
