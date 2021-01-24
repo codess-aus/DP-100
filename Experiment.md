@@ -36,7 +36,15 @@ A substitution value is an explicit value that is used to replace missing values
 
 **Normalize Data module** is used to normalize columns within the dataset to eliminate bias that might be caused by large differences in the unit of values present in a column.You can normalize column values in such cases to fall between O and 1.
 
+*Normalization* is a technique that is often applied as part of data preparation for machine learning. You would change the numeric data in the columns to use a common scale without distorting differences in the range of values or losing information.
+
 **Partition and Sample module**. This module helps create partition of the source dataset and maintain the same ratio of values. This is useful to reduce the size of the dataset and not eliminate imbalance of the source data.
 
 **Split Data module**. The Split Data module is used to divide the dataset into two distinct sets based on the splitting mode provided. This is useful when training models by creating a training set and a testing set.
+
+**Split Data module**. This module is used when you need to separate data into training and testing sets. You can customize the way data is divided. The module also provides options to randomize data selection.
+
+**Join Data module**. This module is used to merge two datasets using a database-style join operation.
+
+**Clip Values module**. This module allows you to replace data values that are above or below a specified threshold with a mean, a constant, or other substitute value.
 
