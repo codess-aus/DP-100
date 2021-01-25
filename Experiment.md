@@ -80,4 +80,10 @@ All workspaces include an automatically registered blob container and file share
 
 Azure Machine Learning allows you to track multiple metrics for your experiments. These metrics are stored in the experiment's **run record** for later retrieval and analysis, and the same metric can be logged within a run more than once. The run.log method can be used to log string or numerical scalar values and accepts three parameters, the metric name, the value to be logged, and an optional description.
 
+The Experiment.submit method can be configured with the show_output parameter to enable local logging during the training process.
 
+The Experiment.start_logging() enables logging for run-related data within the experiment. This will not show the logs generated during the training process.
+
+The ComputeTarget.wait_for_completion method configures logging during a compute target creation. This will not show the logs generated during the training process.
+
+The services.get_logs() enables logs to be retrieved for a previously deployed web service. The logs may contain detailed information about a past run, but they do not show the logs generated during the training process.
