@@ -77,3 +77,7 @@ You can also create a reference to workspaceblobstore using the datastore class.
 **set_default_datastore method**: You can use this command to set a new default datastore.
 
 All workspaces include an automatically registered blob container and file share. The file share - **workspacefilestore** - is used to store notebooks.
+
+Azure Machine Learning allows you to track multiple metrics for your experiments. These metrics are stored in the experiment's **run record** for later retrieval and analysis, and the same metric can be logged within a run more than once. The run.log method can be used to log string or numerical scalar values and accepts three parameters, the metric name, the value to be logged, and an optional description.
+
+
