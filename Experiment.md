@@ -68,3 +68,12 @@ The **Estimator class** can be used when a predefined machine learning framework
 
 **SKLearn class** is used when running Scikit-learn training scripts. Scikit-learn is a Python-based machine learning library that only supports single-node compute targets.
 
+When a new workspace is created, it contains a *default datastore*, **workspaceblobstore**. In order to retrieve the default datastore, you can use the **get_default_datastore** Workspace method. The workspaceblobstore datastore cannot be removed from the workspace.
+
+You can also create a reference to workspaceblobstore using the datastore class. You can use the get method from the datastore class to retrieve a datastore by name. The following code retrieves a datastore named workspaceblobstore:
+
+    my_datastore = Datastore.get(workspaceblobstore) 
+
+**set_default_datastore method**: You can use this command to set a new default datastore.
+
+All workspaces include an automatically registered blob container and file share. The file share - **workspacefilestore** - is used to store notebooks.
