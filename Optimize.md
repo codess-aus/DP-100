@@ -37,3 +37,16 @@
 
 Set featurization to **auto** if you want Automated ML to identify the features. Normalization and scaling are feature engineering transformations that the Automated ML experiment will conduct.
 
+The **get_output** method returns the best pipeline based on the primary metric when no parameters are specified.
+
+The **summary** method gets a table containing a summary of all algorithms attempted, as well as their scores.
+
+The **get_runs** method allows the experiment to retrieve a reference to a given execution. This code will fail if executed with the AutoMLRun class.
+
+The **get_metrics** method returns the metrics logged against the run. It does not provide details on the best run from an experiment.
+
+**MaxAbsScaler** ensures that each feature is scaled by its maximum absolute value.
+
+**PCA** ensure linear dimensionality reduction. It uses singular value decompositions of the data and reduces the dimensional space.
+
+**StandardScaleWrapper** ensures that the features are standardized by altering the dataset, removing the mean, and scaling to unit variance.
