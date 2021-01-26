@@ -88,8 +88,6 @@ As you want your model to be as accurate as possible, you should set the *primar
 
 Set the *primary metric goal* to **MINIMIZE**. This metric goal is useful when you are tracking experiment errors and you want to minimize the number of errors a model reports.
 
+Explainers, also known as interpretability techniques, are used to interpret or explain machine learning models. These explanations are used by data scientists to understand how a machine learning model works. For example, if a model is used to predict which type of person is inclined to commit a crime, its users may want to understand how the model makes that prediction. TabularExplainer is used with tabular datasets.
 
-
-
-
-
+TabularExplainer is categorized as a meta explainer, which means that it chooses an explainer based on how the referenced model is structured. For example, TabularExplainer will use LinearExplainer when a linear model is being evaluated.
