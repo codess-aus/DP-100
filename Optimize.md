@@ -53,6 +53,8 @@ The **get_metrics** method returns the metrics logged against the run. It does n
 
 **RandomParameterSampling** object and specify a parameter_space dictionary. The random parameter sampling method allows you to define a parameter search space and Azure Machine Learning will randomly choose hyperparameters from within this space. Random parameter sampling supports early termination.
 
+Both **Random** and **Grid** sampling configurations will let you associate an early cancellation policy.
+
 Hyperparameters are used to control the training process for machine learning models, and these parameters can have a significant impact on how a trained model performs. Azure Machine Learning includes a hyperparameter tuning service which supports three parameter sampling methods, and the method selected determines whether early termination is supported.
 
 **BanditPolicy** object. A BanditPolicy object allows you to create an early termination policy which will terminate training jobs that are not likely to result in an accurate machine learning model. As part of a BanditPolicy configuration, you can specify how frequently jobs are evaluated and the amount of slack between the best performing job and the job being evaluated. This can greatly reduce training job runtimes and conserve compute resources.
@@ -61,7 +63,8 @@ A **BanditPolicy** object allows you to create an early termination policy which
 
 **Bayesian sampling**method selects hyperparameters based on the performance of previous runs. The Bayesian sampling method does not support early termination.
 
-**Bayesian sampling**. This sampling method selects hyperparameters based on the performance of previous runs. The Bayesian sampling method does not support early termination.
+**Bayesian sampling**. This sampling method selects hyperparameters based on the performance of previous runs. The Bayesian sampling method does not support early termination. When using Bayesian parameter sampling, you should set early_termination_policy = 
+None, or leave the early_termination_policy parameter out.
 
 A **truncation selection** policy is an early termination policy that cancels a percentage of low-performing runs. Each run's performance is evaluated using a primary metric, and the percentage of jobs to cancel is specified when you define the policy. As part of its calculations, a truncation selection policy considers previous performance for runs with less run time.
 
@@ -78,6 +81,7 @@ As you want your model to be as accurate as possible, you should set the *primar
 **Spearman correlation** calculates the monotonic relationship between two values. For example, two stock tickers may have a monotonic relationship where stock A's price decreases when stock B's price increases.
 
 Set the *primary metric goal* to **MINIMIZE**. This metric goal is useful when you are tracking experiment errors and you want to minimize the number of errors a model reports.
+
 
 
 
