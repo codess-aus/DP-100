@@ -126,3 +126,14 @@ in Application Insight queries.
 **step_id** field to focus on a specific issue. This allows you to view details for a specific step. For example, you could query the logs for all entries with the same step_id.
 **parent_run_id** field to view logs for all steps over time. Pipelines are machine learning workflows composed of individual steps. By querying the parent_run_id, you can view information for all steps that are part of a run.
 
+The basic structure of a SQL query includes SELECT and FROM clauses. 
+
+The **SELECT** clause allows you to specify the data you want, and a simple query usually consists of one or more table columns. 
+
+The **FROM** clause allows you to specify the database tables that hold the data you need. When using the Apply SQL Transformation module, datasets are represented as tl, t2, or t3.
+
+If you are combining data from two datasets, you include the name of the first dataset in the **FROM** clause, and then use the **JOIN** clause to specify the second dataset. 
+
+The **ON** clause identifies *the column that the two datasets have in common*, in this case, the departmentlD.
+
+The **GROUP BY** clause tells the module how to group data prior to applying the group function, in this case, the average function.
