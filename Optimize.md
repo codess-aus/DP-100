@@ -110,3 +110,7 @@ predictions. Once a surrogate model is trained, mimic explainer can be used to i
 You create a file dataset to reference the file or files you want to use in your machine learning experiments. The from_files method is used to identify the path and file specification that will be used when the dataset is created.
 
 Azure Machine Learning provides the capability to run experiments on different compute targets without requiring scripts to be rewritten. This is done by creating a run configuration, which serves as a template for a training environment. The easiest way to generate a run configuration is to use the az ml folder attach command.
+
+When configuring a pipeline using Azure Machine Learning SDK, you can define automated machine learning settings that control how the experiment is run. These settings are typically defined in dictionary format and passed to an AutoMLConfig object. If the **featurization** parameter is set to auto, *input data will automatically be preprocessed, and missing values will be handled*. To ensure this doesn't happen, the featurization parameter should be added to the automl_experiment data dictionary and configured with a value of off.
+
+The **RunDetails** class can be used in a Jupyter notebook to view how model training is progressing.
