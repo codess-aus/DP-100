@@ -103,3 +103,10 @@ predictions. Once a surrogate model is trained, mimic explainer can be used to i
 
 **multi-label image classification** project. Multi-label projects are used when multiple labels might be applied to a single image. For example, if an image included a dog and a cat, it may receive a label for each, dog and cat.
 
+**Explainers**, also known as **interpretability techniques**, are used to interpret or explain machine learning models. These explanations are used by data scientists to understand how a machine learning model works. For example, if a model is used to predict which type of person is inclined to commit a crime, its users may want to understand how the model makes that prediction. In order to create an explainer for your local machine learning model, you need to install the azureml-interpret Python package.
+
+**Security rules** allow you to isolate and protect your experiments by controlling access to Azure Machine Learning resources. If you are going to implement security rules, you must ensure that a security rule is created using the BatchNodeManagement service tag. This allows Azure Machine Learning to interact with other Azure services.
+
+You create a file dataset to reference the file or files you want to use in your machine learning experiments. The from_files method is used to identify the path and file specification that will be used when the dataset is created.
+
+Azure Machine Learning provides the capability to run experiments on different compute targets without requiring scripts to be rewritten. This is done by creating a run configuration, which serves as a template for a training environment. The easiest way to generate a run configuration is to use the az ml folder attach command.
