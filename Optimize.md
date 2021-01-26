@@ -66,7 +66,13 @@ A **BanditPolicy** object allows you to create an early termination policy which
 **Bayesian sampling**. This sampling method selects hyperparameters based on the performance of previous runs. The Bayesian sampling method does not support early termination. When using Bayesian parameter sampling, you should set early_termination_policy = 
 None, or leave the early_termination_policy parameter out.
 
+**BayesianParameterSampling** will try to intelligently pick values for hyperparameters based on a provided parameter space. It will not allow you to specify specific discrete values.
+
 A **truncation selection** policy is an early termination policy that cancels a percentage of low-performing runs. Each run's performance is evaluated using a primary metric, and the percentage of jobs to cancel is specified when you define the policy. As part of its calculations, a truncation selection policy considers previous performance for runs with less run time.
+
+**GridParameterSampling** allows you to set discrete values for your hyperparameters.
+
+**RandomParameterSampling** the tuning parameter values are selected randomly over a parameter space provided. It will not allow you to specify specific discrete values.
 
 A **median stopping** policy calculates running averages across training runs that cancels any runs whose performance falls below the median of the running average.
 
@@ -81,7 +87,6 @@ As you want your model to be as accurate as possible, you should set the *primar
 **Spearman correlation** calculates the monotonic relationship between two values. For example, two stock tickers may have a monotonic relationship where stock A's price decreases when stock B's price increases.
 
 Set the *primary metric goal* to **MINIMIZE**. This metric goal is useful when you are tracking experiment errors and you want to minimize the number of errors a model reports.
-
 
 
 
