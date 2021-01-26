@@ -72,7 +72,7 @@ A **truncation selection** policy is an early termination policy that cancels a 
 
 **GridParameterSampling** allows you to set discrete values for your hyperparameters.
 
-**RandomParameterSampling** the tuning parameter values are selected randomly over a parameter space provided. It will not allow you to specify specific discrete values.
+**RandomParameterSampling** the tuning parameter values are selected randomly over a parameter space provided. It will not allow you to specify specific discrete values. Random sampling is used to control the hyperparameter space that is used during model training.
 
 A **median stopping** policy calculates running averages across training runs that cancels any runs whose performance falls below the median of the running average.
 
@@ -91,3 +91,15 @@ Set the *primary metric goal* to **MINIMIZE**. This metric goal is useful when y
 Explainers, also known as interpretability techniques, are used to interpret or explain machine learning models. These explanations are used by data scientists to understand how a machine learning model works. For example, if a model is used to predict which type of person is inclined to commit a crime, its users may want to understand how the model makes that prediction. TabularExplainer is used with tabular datasets.
 
 TabularExplainer is categorized as a meta explainer, which means that it chooses an explainer based on how the referenced model is structured. For example, TabularExplainer will use LinearExplainer when a linear model is being evaluated.
+
+A **global surrogate** is meant to be an interpretable approximation of a **black box** model. Black box models are those for which no explanation exists, which means that the public does not know how the model makes its predictions. Once a surrogate model is trained, the mimic explainer interpretability technique can be used to interpret the model. global surrogate model and use mimic explainer to explain the model. A global surrogate is meant to be an interpretable approximation of a black box model. Black box models are those for which no explanation exists, which means that the public does not know how the model makes its
+predictions. Once a surrogate model is trained, mimic explainer can be used to interpret the model.
+
+**PFI**. Features are data fields that are used to train a model. If you need to determine which fields - or features - have the largest impact on a model's predictions, you should use an interpretability technique that calculates and tracks feature importance. *Azure Machine Learning* supports the PFI for this purpose. PFI randomly shuffles features during model training and then calculates the impact on the model's performance.
+
+**Azure Machine Learning SDK** to generate *feature importance*. Features are data fields that are used to train a model. If you need to determine which fields or features have the largest impact on a model's predictions, you should use an interpretability technique that calculates and tracks feature importance. Azure Machine Learning supports the **Permutation Feature Importance Explainer (PFI)** for this purpose. **PFI** randomly shuffles features during model training, and then calculates the impact on the model's performance.
+
+**SHAP linear explainer**. SHAP is a model-specific interpretability technique used for linear models. SHAP explainers use calculates based on coalitional game theory. SHAP is not model-agnostic and is used for tree-based models.
+
+**multi-label image classification** project. Multi-label projects are used when multiple labels might be applied to a single image. For example, if an image included a dog and a cat, it may receive a label for each, dog and cat.
+
