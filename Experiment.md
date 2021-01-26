@@ -110,3 +110,11 @@ Machine learning pipelines require remote compute and cannot be run on a local c
 Azure Machine Learning supports several locations for storing experiment output. Files can be saved to storage on the local compute instance; however, these files do not persist across training runs. To store files for later analysis and review, you should use an Azure Machine Learning datastore, or you should write to the ./outputs or ./logs folders. Files written to the ./logs folder are uploaded in real time.
 
 You should not create a FileDataset. You create a file dataset to reference the unstructured file or files you want to use in your machine learning experiments.
+
+Azure Machine Learning pipelines are workflows that represent a series of machine learning tasks. Pipeline tasks can be executed independently from the underlying data, and you can register new datasets for each pipeline run, if necessary.
+
+You can allow other users to run the pipeline using custom inputs by publishing the pipeline. To do this, you must first create a pipeline parameter object using the PipelineParameter class, which allows you to specify the default value of the pipeline parameter. Once this is complete, you can add your PipelineParameter to any step, including script steps, when constructing a pipeline. 
+
+Finally, you can use the publish_pipeline method to publish the pipeline. This creates a REST endpoint that can by accessed by external users. 
+
+You should not save the pipeline to a YAML file. You use this option to export the pipeline steps and then import them into another system.
