@@ -50,3 +50,13 @@ The **get_metrics** method returns the metrics logged against the run. It does n
 **PCA** ensure linear dimensionality reduction. It uses singular value decompositions of the data and reduces the dimensional space.
 
 **StandardScaleWrapper** ensures that the features are standardized by altering the dataset, removing the mean, and scaling to unit variance.
+
+**RandomParameterSampling** object and specify a parameter_space dictionary. The random parameter sampling method allows you to define a parameter search space and Azure Machine Learning will randomly choose hyperparameters from within this space. Random parameter sampling supports early termination.
+
+Hyperparameters are used to control the training process for machine learning models, and these parameters can have a significant impact on how a trained model performs. Azure Machine Learning includes a hyperparameter tuning service which supports three parameter sampling methods, and the method selected determines whether early termination is supported.
+
+**BanditPolicy** object. A BanditPolicy object allows you to create an early termination policy which will terminate training jobs that are not likely to result in an accurate machine learning model. As part of a BanditPolicy configuration, you can specify how frequently jobs are evaluated and the amount of slack between the best performing job and the job being evaluated. This can greatly reduce training job runtimes and conserve compute resources.
+
+**Bayesian sampling**method selects hyperparameters based on the performance of previous runs. The Bayesian sampling method does not support early termination.
+
+You can allow other users to run the pipeline using custom inputs by publishing the pipeline. To do this, you must first create a pipeline parameter using the **PipelineParameter** class, which allows to specify the default value of the pipeline parameter.
