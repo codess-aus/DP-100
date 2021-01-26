@@ -57,6 +57,30 @@ Hyperparameters are used to control the training process for machine learning mo
 
 **BanditPolicy** object. A BanditPolicy object allows you to create an early termination policy which will terminate training jobs that are not likely to result in an accurate machine learning model. As part of a BanditPolicy configuration, you can specify how frequently jobs are evaluated and the amount of slack between the best performing job and the job being evaluated. This can greatly reduce training job runtimes and conserve compute resources.
 
+A **BanditPolicy** object allows you to create an early termination policy which will terminate training jobs that are not likely to result in an accurate machine learning model. As part of a BanditPolicy configuration, you can define the amount of slack between the best performing job and the job being evaluated.
+
 **Bayesian sampling**method selects hyperparameters based on the performance of previous runs. The Bayesian sampling method does not support early termination.
 
+**Bayesian sampling**. This sampling method selects hyperparameters based on the performance of previous runs. The Bayesian sampling method does not support early termination.
+
+A **truncation selection** policy is an early termination policy that cancels a percentage of low-performing runs. Each run's performance is evaluated using a primary metric, and the percentage of jobs to cancel is specified when you define the policy. As part of its calculations, a truncation selection policy considers previous performance for runs with less run time.
+
+A **median stopping** policy calculates running averages across training runs that cancels any runs whose performance falls below the median of the running average.
+
 You can allow other users to run the pipeline using custom inputs by publishing the pipeline. To do this, you must first create a pipeline parameter using the **PipelineParameter** class, which allows to specify the default value of the pipeline parameter.
+
+Automated machine learning in Azure Machine Learning uses the primary metric you define to optimize model training. The metrics you can configure are dependent on the machine learning task type, such as regression or classification.
+
+The **accuracy** metric can be used for *classification* tasks, and it calculates the proportion of instances that have been correctly classified.
+
+As you want your model to be as accurate as possible, you should set the *primary metric goal* to **MAXIMIZE**, meaning Azure Machine Learning will attempt to maximize the model's classification accuracy.
+
+**Spearman correlation** calculates the monotonic relationship between two values. For example, two stock tickers may have a monotonic relationship where stock A's price decreases when stock B's price increases.
+
+Set the *primary metric goal* to **MINIMIZE**. This metric goal is useful when you are tracking experiment errors and you want to minimize the number of errors a model reports.
+
+
+
+
+
+
