@@ -118,3 +118,11 @@ You can allow other users to run the pipeline using custom inputs by publishing 
 Finally, you can use the publish_pipeline method to publish the pipeline. This creates a REST endpoint that can by accessed by external users. 
 
 You should not save the pipeline to a YAML file. You use this option to export the pipeline steps and then import them into another system.
+
+You can use the OpenCensus Python library to forward Azure Machine Learning logs to Application Insights to provide advanced pipeline monitoring, tracing, and metrics tracking. To do this, you define a Custom Dimensions dictionary which provides field names for your logging data. These fields can then be specified 
+in Application Insight queries.
+
+**run_type** field to differentiate between training and scoring runs. In machine learning, you train a model by applying an algorithm to input data. Scoring is the process of using a trained model to predict future values.
+**step_id** field to focus on a specific issue. This allows you to view details for a specific step. For example, you could query the logs for all entries with the same step_id.
+**parent_run_id** field to view logs for all steps over time. Pipelines are machine learning workflows composed of individual steps. By querying the parent_run_id, you can view information for all steps that are part of a run.
+
