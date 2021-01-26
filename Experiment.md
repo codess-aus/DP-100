@@ -137,3 +137,4 @@ If you are combining data from two datasets, you include the name of the first d
 The **ON** clause identifies *the column that the two datasets have in common*, in this case, the departmentlD.
 
 The **GROUP BY** clause tells the module how to group data prior to applying the group function, in this case, the average function.
+
