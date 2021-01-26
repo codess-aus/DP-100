@@ -87,3 +87,12 @@ The Experiment.start_logging() enables logging for run-related data within the e
 The ComputeTarget.wait_for_completion method configures logging during a compute target creation. This will not show the logs generated during the training process.
 
 The services.get_logs() enables logs to be retrieved for a previously deployed web service. The logs may contain detailed information about a past run, but they do not show the logs generated during the training process.
+
+You plan to configure logging for an experiment that explores data associated with gender distribution within organizations across the world. The experiment must draw a box plot of genders by country. You need to use the appropriate logging method to render the plot for the experiment run object.
+**log_image()** This method logs a .PNG image file or a matplotlib plot to the run. These images will be visible and comparable in the run record.
+
+**log_table()** This method can be used to log a dictionary object to the run with the given name. This method will not render a plot.
+**log()** This method is used to log a numerical or a string value to the run with a given name. This method will not render a plot.
+**log_list()** This method is used to log a list of values to the run with a given name. This method will not render a plot.
+**log_row()** This method creates a metric with multiple columns. Each named parameter generates a column with the value specified. This method will not render a plot.
+
