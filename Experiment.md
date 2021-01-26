@@ -96,3 +96,8 @@ You plan to configure logging for an experiment that explores data associated wi
 **log_list()** This method is used to log a list of values to the run with a given name. This method will not render a plot.
 **log_row()** This method creates a metric with multiple columns. Each named parameter generates a column with the value specified. This method will not render a plot.
 
+**get_file_names()** function. This function will list all the files that are associated with the experiment run object. 
+**get_status()** function is used to fetch the status of the last run.
+**get_details_with_logs()** This function is used to get the status of the last run, along with log file contents. 
+**get_details()** This function is used to get the definition, status information, current log files, and other details of the run.
+
