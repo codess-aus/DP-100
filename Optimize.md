@@ -32,3 +32,8 @@
 **normalized_root_mean_squared_error** metric. This metric is well suited for the evaluation of regression algorithms. This metric is not optimal for classification model evaluation.
 
 **log_loss** metric. This metric is used for logistic regressions and similar extensions, such as neural networks. This metric is not optimal for classification model evaluation.
+
+**AUC_weighted** is the correct metric to evaluate unbalanced datasets. It measures the area under the curve with consideration to the mean for each class, weighted by the number of true instance evaluated in each class.
+
+Set featurization to **auto** if you want Automated ML to identify the features. Normalization and scaling are feature engineering transformations that the Automated ML experiment will conduct.
+
