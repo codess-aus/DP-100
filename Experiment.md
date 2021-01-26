@@ -101,3 +101,12 @@ You plan to configure logging for an experiment that explores data associated wi
 **get_details_with_logs()** This function is used to get the status of the last run, along with log file contents. 
 **get_details()** This function is used to get the definition, status information, current log files, and other details of the run.
 
+Automated machine learning requires that input data be stored in tabular form. You create a tabular dataset to reference tabular data, such as that found in a comma-separated-value (CSV) file. You use the Dataset.Tabular.from_delimited_files method to register tabular data in a dataset.
+
+When configuring a pipeline using Azure Machine Learning SDK, you can define automated machine learning settings that control how the experiment is run. These settings are typically defined in dictionary format and passed to the AutoMLConfig class. If the featurization parameter is set to auto, input data will automatically be preprocessed and missing values will be handled.
+
+Machine learning pipelines require remote compute and cannot be run on a local compute target. Remote compute targets can reside inside or outside of the Azure cloud.
+
+Azure Machine Learning supports several locations for storing experiment output. Files can be saved to storage on the local compute instance; however, these files do not persist across training runs. To store files for later analysis and review, you should use an Azure Machine Learning datastore, or you should write to the ./outputs or ./logs folders. Files written to the ./logs folder are uploaded in real time.
+
+You should not create a FileDataset. You create a file dataset to reference the unstructured file or files you want to use in your machine learning experiments.
