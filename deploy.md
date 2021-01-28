@@ -74,3 +74,17 @@ An HTTP 504 error indicates that a request has timed out. You can increase the r
 Key authentication only for ACI compute targets. ACI allows you to package and deploy your machine learning models using easy-to-manage containers. A container is a virtualized app that includes all the resources it needs to run, including fle resources, dependencies, and services. **ACI only supports key authentication**. This means that if authentication is enabled for a model's web service endpoints, all requests must be authenticated using a predefined key. This is similar to many REST Application Programming Interfaces (APIs) which support API keys for authentication.
 
 Key or token authentication for AKS compute targets. AKS supports highly scalable compute options for Azure Machine Learning experiments. In addition to supporting multiple-node clusters, AKS can be used for experiments that require hardware acceleration via GPI_J or Field-programmable Gate Arrays (FPGA). Finally, AKS can dynamically scale compute availability based on workload, Token-based authentication relies on temporary tokens. Once enabled, users or services that connect to deployed model must submit an Azure Machine Learning JSON Web Token in order to be allowed Each token has a limited lifetime, and expired tokens must be refreshed prior to making new calls.
+
+Deploy a Model as a realtime service making sure it's accessible to end-users:
+
+You should perform the following actions:
+* Create a real-time inference pipeline.
+* Create an inferencing cluster.
+* Deploy the real-time endpoint.
+* Test the real-time endpoint.
+
+You should also create an inferencing cluster where the pipeline will be hosted.
+
+You should create a real-time inference pipeline from the trained model. You need to create the inference pipeline to deploy the model as a web service. You can perform these first two steps in any order.
+
+Then, you need to select the Deploy button in the designer view for the inference model to deploy the services. Once deployed, you should go to the test tab to ensure that the real-time endpoints are accessible by providing a data row, and click the Test button.
