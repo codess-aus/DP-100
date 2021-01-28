@@ -58,3 +58,15 @@ If the published model requires authentication, you will need to define an HTTP 
 The AmlComputeJobEvent log is just one of the logs that can be streamed to Azure Monitor. Information from this log is stored in the Azure Monitor AmlComputeJobEvents table. 
 
 You can query the ExecutionState property to determine the state of a job.
+
+AKS clusters are designed for heavy, real-time production workloads. One of the primary benefits of deploying to AKS is its support for autoscaling. This means that as workload increases or decreases, an AKS cluster can add or terminate cluster nodes.
+
+An HTTP 503 Service Unavailable error indicates that the service is operational but it is unable to respond to requests. This often indicates that the server is overloaded and does not have the resources to process the request.
+
+By default, AKS scales up when cluster utilization exceeds 70 percent. If there is a sudden increase in requests, the cluster may not be able to add nodes quickly enough to handle the requests. By reducing this threshold, you allow the cluster to scale up under lighter loads.
+
+You can also modify the autoscale_max_replicas parameter. By default, an AKS cluster can scale up to 10 containers (nodes). By increasing this parameter, you can ensure that your cluster can handle a higher number of simultaneous requests.
+
+You can also change the minimum number of replicas. This parameter defines the minimum number of nodes that should be online in an AKS cluster. The default value is 1. By increasing this parameter, you can ensure that the cluster always has enough resources to deal with spikes in requests.
+
+An HTTP 504 error indicates that a request has timed out. You can increase the request timeout threshold from one minute if requests are timing out too quickly. However, this will not reduce the incidence of HTTP 503 errors.
