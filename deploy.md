@@ -105,3 +105,10 @@ Publish the pipeline to a new endpoint: A web service is defined when you publis
 
 The **Convert to Dataset module** is used to ensure that data normalization changes can be used in other pipelines. Input data to this module must be tabular.
 
+Service Principal authentication can be used in scenarios when prompting a user for credentials is not feasible, such as when automated processes need to interact with a published pipeline. A service principal is any directory object that can be used for authentication. User accounts are considered service principals.
+
+ParallelRunStep can be used to process large amounts of data in parallel. ParallelRunStep works by breaking up the data into batches that are processed in parallel.
+
+PythonScriptStep is a basic, built-in step that is used to run a Python Script on a compute target. It takes a script name and other optional parameters, such as arguments for the script, compute target, inputs, and outputs. PythonScriptStep can be used to execute the scoring script; however, it will not run parallel instances partitioning the data.
+
+AdlaStep works only with data stored in the default Data Lake Storage of the the Azure Data Lake Analytics account.
