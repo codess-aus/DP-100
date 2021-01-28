@@ -25,3 +25,23 @@ DSv2 series: DSv2 series VMS are general purpose VMS and don't support GPUs. For
 FS series VMs are compute optimized VMS and don't support GPUs. These are good for CPU intensive workloads. For running image classification deep learning model leveraging CUDA, GPU-based graphic processing is recommended.
 
 Lsv2 series VMS are storaged optimized VMs. This type of VMS is good for high disk 10 operations like hosting databases. For running image classification deep learning model leveraging CUDA, GPU- based graphic processing is recommended.
+
+An **inference cluster** can deploy trained models that will provide *real-time* predictive services at scale. In Azure Machine Learning, inference is also known as model scoring. Such models are trained on a data set and can analyze the data in real-time to provide predictions. For example, you could train a model on stock market data. Once trained, you could use the model to analyze stock prices in real-time and then make predictions on future prices. Inference clusters are built using Azure Kubernetes Service(AKS) and are sometimes referred to as **AKS clusters**.
+
+Keywords: Inference Cluster = AKS Cluster = Realtime
+
+**Compute clusters** cannot be used with models that offer predictive services because they use *low-priority VMS* and may *not scale* to the load required. Computer cluster *VM availability is not guaranteed*, thus the provided service is not real-time. 
+
+**Attached compute** resources cannot be used for real-time inference because they do not scale to the workloads involved in real-time inference.
+**Attached compute** can be used for Azure Databricks clusters. Attached compute supports linking to on-cloud Azure compute resources, including VMS and Azure Databricks clusters. Azure Databricks is a cloud-based Apache Spark-based analytics platform. **Databricks clusters** are often used to run *machine learning pipelines*. You might choose Azure Databricks if you are collaborating with other machine learning teams, or because it is based on the open-source Apache Spark ecosystem.
+
+A **compute cluster** can support scalable, on-demand processing using low-priority VMs.
+
+**Azure Machine Learning compute clusters** are scalable machine learning platforms consisting of one or more CPU or CPU nodes. Compute clusters can scale from zero to hundreds of nodes, depending on workload. *Compute clusters support the use of low-priority VMS, which do not have guaranteed availability*. Using low-priority VMS can help reduce machine learning costs.
+
+Keywords: Compute Clusters scale but with low priority. Big but not real-time. Cheaper.
+
+* AKS target could theoretically be used to Support scalable, on-demand processing. However, AKS is designed for compute-intensive operations at scale and is best suited for real-time predictive services.
+* Attached compute should not be used to support scalable, on-demand processing because it does not provide scalability.
+* Neither inference cluster nor compute clusters can use Azure Databricks clusters.
+
