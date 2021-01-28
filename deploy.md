@@ -45,3 +45,8 @@ Keywords: Compute Clusters scale but with low priority. Big but not real-time. C
 * Attached compute should not be used to support scalable, on-demand processing because it does not provide scalability.
 * Neither inference cluster nor compute clusters can use Azure Databricks clusters.
 
+To deploy a model as a real-time web service using your *local* system, you must install Docker (on your *local* machine). Docker is a container creation and management platform that can be deployed on a variety of operating systems.
+
+Models deployed locally as a web service will accept requests on an HTTP endpoint. Once your container has the required dependencies installed, you will need to define the port where the HTTP endpoint will listen for service requests. A container is a virtualized app that includes all the resources it needs to run, including file resources, dependencies, and services.
+
+If you enable key-based authentication on your web service, all service connect attempts will be required to provide a valid Application Programming Interface (API) key prior to accessing the model.
