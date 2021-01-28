@@ -96,3 +96,12 @@ This web service is defined when you publish a pipeline, and an HTTP endpoint th
 If you want to preserve an existing pipeline, and then you can create a new pipeline that implements your changes, you can then publish this new pipeline under your existing endpoint. 
 
 Finally, you can test you new pipeline by including its version in your REST calls. You should not determine the ID of the default published pipeline. Every endpoint has one default pipeline. When you publish a new pipeline under an existing endpoint, you can choose to make it the default pipeline for that endpoint.
+
+Create a parameter for your dataset: This option allows consumers to provide a dataset to your pipeline at runtime. This is useful in scenarios where a model is trained on a dataset but is used to formulate predictions on new data. You can parameterize a pipeline by using the dataset module.
+
+Connect a dataset to the pipeline: You connect a dataset to a pipeline when you need to provide data input. This process is manual and does not occur automatically at runtime.
+
+Publish the pipeline to a new endpoint: A web service is defined when you publish a pipeline, and an HTTP endpoint is created that external applications and services can consume.
+
+The **Convert to Dataset module** is used to ensure that data normalization changes can be used in other pipelines. Input data to this module must be tabular.
+
