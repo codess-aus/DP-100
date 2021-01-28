@@ -88,3 +88,11 @@ You should also create an inferencing cluster where the pipeline will be hosted.
 You should create a real-time inference pipeline from the trained model. You need to create the inference pipeline to deploy the model as a web service. You can perform these first two steps in any order.
 
 Then, you need to select the Deploy button in the designer view for the inference model to deploy the services. Once deployed, you should go to the test tab to ensure that the real-time endpoints are accessible by providing a data row, and click the Test button.
+
+In Azure Machine Learning, **inference** is also known as **model scoring**. Such models are trained on a dataset and can analyze data in real-time or on-demand to provide predictions. A batch inference pipeline is used to score datasets on-demand via web service.
+
+This web service is defined when you publish a pipeline, and an HTTP endpoint that external applications and services can consume is created. Azure Machine Learning allows you to publish multiple pipelines under the same endpoint. When this occurs, each published pipeline is assigned to a version number, which can be provided in REST API calls.
+
+If you want to preserve an existing pipeline, and then you can create a new pipeline that implements your changes, you can then publish this new pipeline under your existing endpoint. 
+
+Finally, you can test you new pipeline by including its version in your REST calls. You should not determine the ID of the default published pipeline. Every endpoint has one default pipeline. When you publish a new pipeline under an existing endpoint, you can choose to make it the default pipeline for that endpoint.
