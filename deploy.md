@@ -123,3 +123,22 @@ The **get_steps** method lists the generated step runs. The method provides a li
 
 You should use init() for any costly or common preparation for later inference. 
 You should use run(mini_batch) to write code that would evaluate and append the outputs of the evaluation.
+
+* You should perform training tasks only on an Azure Machine Learning compute cluster. 
+* Azure Machine Learning compute clusters are scalable machine learning platforms consisting of one or more CPU or GPU nodes. 
+* Compute clusters can scale from zero to hundreds of nodes, depending on workload. 
+* Compute clusters support the use of low-priority virtual machines (VMS), which do not have guaranteed availability.
+* Using low-priority VMS can help reduce machine learning costs. 
+* Azure Machine Learning compute clusters can be used for training pipelines, but not for pipeline deployment because this functionality is not supported.
+
+* You should perform training tasks only on an Azure Machine Learning compute instance. 
+* A compute instance is a single Azure-homed virtual machine (VM). 
+* Azure Machine Learning compute instances are highly scalable cloud compute resources, which support multiple CPUs and large amounts of RAM based on the VM size you select at deployment. 
+* Unlike a compute cluster, a compute instance cannot scale down to zero, meaning that usage charges accrue unless you power off the VM. 
+* Azure Machine Learning compute instances can be used for training pipelines, but not for pipeline deployment because this functionality is not supported.
+
+* You should perform deployment only on AKS. 
+* AKS clusters are designed for heavy, real-time production workloads. 
+* One of the primary benefits of deploying to AKS is its support for autoscaling. This means that as workload increases or decreases, an AKS cluster can add or terminate cluster nodes. 
+* In addition to supporting multiple-node clusters, AKS can be used for experiments that require hardware acceleration via GPU or Field-Programmable Gate Arrays (FPGAs).
+
