@@ -112,3 +112,12 @@ ParallelRunStep can be used to process large amounts of data in parallel. Parall
 PythonScriptStep is a basic, built-in step that is used to run a Python Script on a compute target. It takes a script name and other optional parameters, such as arguments for the script, compute target, inputs, and outputs. PythonScriptStep can be used to execute the scoring script; however, it will not run parallel instances partitioning the data.
 
 AdlaStep works only with data stored in the default Data Lake Storage of the the Azure Data Lake Analytics account.
+
+The **wait_for_completion** method is used to monitor the status and by default, it will stream the logs to the output determined by the sys.stdout configuration.
+
+The **get_status** method retrieves the status of the run, however, it will not provide streaming logs while the pipeline is being executed.
+
+The **get_graph** renders the graph of the pipeline run. 
+
+The **get_steps** method lists the generated step runs. The method provides a list of all the pipeline steps that have completed or have started running.
+
