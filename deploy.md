@@ -156,3 +156,8 @@ In addition to token-based authentication, Azure Machine Learning also supports 
 
 **AciWebservice.deploy_configuration** to set auth_enabled to True. This method is used to enable key-based authentication on an Azure Container Instances (ACI) web service.
 
+**Azure Stack Edge** is a hardware-as-a-service platform offered by Microsoft. As part of an Azure Stack Edge subscription, Microsoft provides a hardware-accelerated compute device that can process and analyze data collected by IOT devices before it is sent to the cloud. In addition to applying your machine learning models to IOT data, Stack Edge can filter, aggregate, and optimize data in order to reduce bandwidth requirements.
+
+AKS supports highly scalable compute options for Azure Machine Learning experiments. In addition to supporting multiple-node clusters, AKS can be used for experiments that require hardware acceleration via GPU or Field-Programmable Gate Arrays (FPGA).
+
+**Azure Machine Learning SDK** preview package and deploy your machine learning model as an app in Azure Functions. Once machine learning training is complete, you can create a Docker image based on the trained model. This model can then be deployed as an Azure Functions as containerized code.
