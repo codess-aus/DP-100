@@ -147,3 +147,12 @@ In Azure Machine Learning, inference is also known as model scoring. Such models
 An endpoint is the port-to-service mapping that is created when you deploy a web service. As part of deploying a real-time endpoint, you are required to specify a compute target, and publishing an autoscaling inference pipeline is only supported on AKS inference clusters. If you have not created an AKS cluster prior to this step, you will need to define one before you can complete the deployment.
 
 Once the real-time endpoint has been deployed, applications and services can access the endpoint as they would any other REST API.
+
+A **Service Principal** is any directory object that can be used for authentication. Once an SP is created, it can be used in Azure Machine Learning to facilitate token-based authentication. As part of the creation process for an SP, a client secret is generated, which is comparable to a password. You can supply the client secret in an HTTP POST to retrieve an authentication token. This token, also known as a JSON Web Token (JWT), can then be used to authenticate with an Azure Machine Learning web service. By default, a JWT is valid for one hour, and must be refreshed when it expires.
+
+In addition to token-based authentication, Azure Machine Learning also supports **key-based web-service authentication**. Keys, comparable to Application Programming Interface (API) keys, are statically generated. If a key needs to be replaced, you can use the **regen_key** method to regenerate authentication keys.
+
+**get_keys** method is used to retrieve the primary and secondary authentication keys. You used keys to authenticate to an Azure Machine Learning web service that has been configured with key-based authentication.
+
+**AciWebservice.deploy_configuration** to set auth_enabled to True. This method is used to enable key-based authentication on an Azure Container Instances (ACI) web service.
+
