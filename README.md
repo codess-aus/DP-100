@@ -14,7 +14,8 @@
 * determine appropriate compute specifications for a training workload
 * create compute targets for experiments and training
 
-[My Notes on Setting up an Azure Machine Learning Workspace](https://github.com/msandfor/DP-100/blob/main/Workspace.md)
+### [My Notes on Setting up an Azure Machine Learning Workspace](https://github.com/msandfor/DP-100/blob/main/Workspace.md)
+These are study notes from my prep
 
 # Run Experiments and Train Models (25-30%)
 
