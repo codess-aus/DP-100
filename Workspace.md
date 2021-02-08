@@ -114,3 +114,5 @@ Select Azure ML compute cluster to auto scale instances for models based on comp
 After logging in, you see a list of subscriptions associated with your Azure account. The subscription information with isDefault: true is the currently activated subscription for Azure CLI commands. This subscription must be the same one that contains your Azure Machine Learning workspace. You can find the subscription ID from the Azure portal by visiting the overview page for your workspace. You can also use the SDK to get the subscription ID from the workspace object. For example, Workspace.from_config().subscription_id.
 
 To select another subscription, use the az account set -s <subscription name or ID> command and specify the subscription name or ID to switch to. For more information about subscription selection, see Use multiple Azure Subscriptions.
+
+*Deleting a workspace does not delete the application insight, storage account, key vault, or container registry used by the workspace.* 
