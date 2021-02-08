@@ -110,3 +110,7 @@ Select Remote VM when using your own virtual machine (VM) for hyperparameter tun
 Select Azure HDlnsight to use Apache Spark to train your models. Azure HDlnsight provides a pre-configured environment with Apache Spark.
 
 Select Azure ML compute cluster to auto scale instances for models based on compute requirements. Azure ML compute cluster can be configured to scale up when training jobs are submitted.
+
+After logging in, you see a list of subscriptions associated with your Azure account. The subscription information with isDefault: true is the currently activated subscription for Azure CLI commands. This subscription must be the same one that contains your Azure Machine Learning workspace. You can find the subscription ID from the Azure portal by visiting the overview page for your workspace. You can also use the SDK to get the subscription ID from the workspace object. For example, Workspace.from_config().subscription_id.
+
+To select another subscription, use the az account set -s <subscription name or ID> command and specify the subscription name or ID to switch to. For more information about subscription selection, see Use multiple Azure Subscriptions.
