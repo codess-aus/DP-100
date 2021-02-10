@@ -116,3 +116,14 @@ After logging in, you see a list of subscriptions associated with your Azure acc
 To select another subscription, use the az account set -s <subscription name or ID> command and specify the subscription name or ID to switch to. For more information about subscription selection, see Use multiple Azure Subscriptions.
 
 *Deleting a workspace does not delete the application insight, storage account, key vault, or container registry used by the workspace.* 
+
+Azure Machine Learning workspaces can be provisioned as one of two editions, **Basic** or **Enterprise**, and the edition determines which features will be available for a workspace. You define the machine learning workspace edition when the workspace is created. You can also upgrade any existing Basic edition to Enterprise edition at any time.
+
+**Basic or Enterprise edition can use notebooks to create and run experiments**. A notebook is essentially a development environment that has been specialized for data science tasks. Unlike a traditional object-oriented coding environment, notebooks support features such as data visualization and equation writing. 
+
+The most popular notebook application is Jupyter Notebook, which supports popular data science programming languages such as Python and R.
+
+**Enterprise edition is required to create pipelines using Azure Machine Learning Designer**. Azure Machine Learning pipelines are workflows that represent a series of machine learning tasks. Pipeline tasks can be executed independently from the underlying data, and you can register new datasets for each pipeline run, if necessary. While Enterprise edition is required for this task, you can still create and manage pipelines using Azure Machine Learning SDK with the Basic edition. 
+
+**Basic or Enterprise edition can be used to share compute instances**. A compute instance is a single Azure-homed virtual machine (VM). Azure Machine Learning compute instances are highly scalable cloud compute resources, which support multiple CPUs and large amounts of RAM based on the VM size you select at deployment.
+
