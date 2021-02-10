@@ -127,3 +127,10 @@ The most popular notebook application is Jupyter Notebook, which supports popula
 
 **Basic or Enterprise edition can be used to share compute instances**. A compute instance is a single Azure-homed virtual machine (VM). Azure Machine Learning compute instances are highly scalable cloud compute resources, which support multiple CPUs and large amounts of RAM based on the VM size you select at deployment.
 
+**add /workspaces/environments/write to the Actions element**. If the Azure Machine Learning default roles do not provide the granular permissions you need to control resource access, you can create custom role definition files which are constructed as JavaScript Object Notation (JSON) dictionaries. The Actions section in a role definition file is used to define the permissions that the role has. Submitting a training run requires a user to be assigned a built-in role, such as contributor, or be assigned a custom role with the required privileges. The /workspaces/environments/write permission will allow a user to submit a training run.
+
+The AssignableScopes section of a role definition file can be used to limit where a role's permissions can be exercised. The "/" scope means all scopes.
+
+A role must first be created before it can be assigned. The az role definition create can be used to create a custom role definition, and takes a JSON role definition file as input.
+
+/workspaces/computes/write from the NotActions element. The NotActions element is used to define permissions a role should not be assigned. These are subtracted from permissions defined in the Actions element. 
