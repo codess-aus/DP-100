@@ -190,3 +190,20 @@ You should not register a new dataset version for each pipeline pass. Azure Mach
 register a new dataset using an existing dataset name using versioning. A version is a bookmark of the data's 
 state and is useful in cases where new data needs to be used for retraining. By creating versions, you can 
 return to a specific version of the dataset if necessary. 
+
+You should perform the following actions in order: 
+1. Define a PipelineParameter object. 
+2. Specify a default pipeline parameter value. 
+3. Add the PipelineParameter object as a script argument. 
+4. Use the publish_pipeline method to publish the pipeline. 
+Azure Machine Learning pipelines are workflows that represent a series of machine learning tasks. Pipeline 
+tasks can be executed independently from the underlying data, and you can register new datasets for each 
+pipeline run, if necessary. 
+You can allow other users to run the pipeline using custom inputs by publishing the pipeline. To do this, you 
+must first create a pipeline parameter object using the PipelineParameter class, which allows you to specify 
+the default value of the pipeline parameter. Once this is complete, you can add your PipelineParameter to 
+any step, including script steps, when constructing a pipeline. Finally, you can use the publish_pipeline 
+method to publish the pipeline. This creates a REST endpoint that can by accessed by external users. 
+You should not save the pipeline to a YAML file. You use this option to export the pipeline steps and then 
+import them into another system. 
+
