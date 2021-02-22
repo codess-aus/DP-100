@@ -140,3 +140,10 @@ The **GROUP BY** clause tells the module how to group data prior to applying the
 
 The Execute Python Script module can be added to a drag-and-drop designer pipeline to run Python code. This is useful in cases where an existing Azure Machine Learning designer module does not provide the functionality you need for your experiments. The Execute Python Script module requires that your script uses an entry-point function named **azureml_main**
 
+You can use the Azure Machine Learning SDK to create and manage machine learning workspaces, create and manage experiments, load data, and train machine learning models. If you want to use Azure Machine Learning Studio to view associated experiment graphs or individual runs, you can **call the experiment variable** to generate an Azure Machine Learning Studio link. Following this link takes you to the Azure Machine Learning studio page for your experiment. 
+
+The **run.complete** method is called after each iteration of an experiment. As the name indicates, this method marks the run as completed. 
+
+The **run.upload_file** method is used to serialize and upload the model to Azure Machine Learning Studio. You can then use Azure Machine Learning SDK to download the run at a future date. 
+
+**experiment.start_logging** method is used to initiate an interactive logging session for an experiment. 
