@@ -154,3 +154,12 @@ from interpret.ext.glassbox import **DecisionTreeExplainableModel**
 
 **PFIExplainer** does not support local explanations
 
+**AUC_Weighted** is a metric that can be used for **classification models**. AUC_Weighted is the arithmetic mean of the score for each class, weighted by the number of true 
+instances in each class. This *works well when the datasets are imbalanced*. 
+
+**accuracy metric**. This metric provides the effciency of the model against the training data. However, you should not use this metric when the dataset is imbalanced, because it may provide inconsistent weight to certain rows of the dataset. 
+
+**normalized_root_mean_squared_error** metric. This metric is well suited for the evaluation of regression algorithms. This metric is not optimal for classification model evaluation. 
+
+**log_loss metric**. This metric is used for logistic **regressions** and similar extensions, such as neural networks. This metric is not optimal for classification model evaluation. 
+
