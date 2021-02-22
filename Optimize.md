@@ -143,3 +143,5 @@ The **ScriptRunConfig** class is used to create an object that contains both tra
 **TabularExplainer** calls one of the three **SHAP explainers** underneath **(TreeExplainer, DeepExplainer, or KernelExplainer)**.
 TabularExplainer automatically selects the most appropriate one for your use case, but you can call each of its three underlying explainers directly.
 
+**PFIExplainer** does not support local explanations
+
