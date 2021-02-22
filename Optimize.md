@@ -140,3 +140,6 @@ The **ScriptRunConfig** class is used to create an object that contains both tra
 
 **Logging** functions to your pipeline with the Execute Python Script module. This module can be added to a drag-and-drop designer pipeline to run Python code. This is useful in cases where an existing Azure Machine Learning designer module does not provide the functionality you need for your experiments.
 
+**TabularExplainer** calls one of the three **SHAP explainers** underneath **(TreeExplainer, DeepExplainer, or KernelExplainer)**.
+TabularExplainer automatically selects the most appropriate one for your use case, but you can call each of its three underlying explainers directly.
+
