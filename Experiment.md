@@ -138,3 +138,5 @@ The **ON** clause identifies *the column that the two datasets have in common*, 
 
 The **GROUP BY** clause tells the module how to group data prior to applying the group function, in this case, the average function.
 
+The Execute Python Script module can be added to a drag-and-drop designer pipeline to run Python code. This is useful in cases where an existing Azure Machine Learning designer module does not provide the functionality you need for your experiments. The Execute Python Script module requires that your script uses an entry-point function named **azureml_main**
+
