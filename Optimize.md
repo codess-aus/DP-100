@@ -143,5 +143,14 @@ The **ScriptRunConfig** class is used to create an object that contains both tra
 **TabularExplainer** calls one of the three **SHAP explainers** underneath **(TreeExplainer, DeepExplainer, or KernelExplainer)**.
 TabularExplainer automatically selects the most appropriate one for your use case, but you can call each of its three underlying explainers directly.
 
+from interpret.ext.blackbox import **MimicExplainer**
+
+# you can use one of the following four interpretable models as a global surrogate to the black box model
+
+from interpret.ext.glassbox import **LGBMExplainableModel**
+from interpret.ext.glassbox import **LinearExplainableModel**
+from interpret.ext.glassbox import **SGDExplainableModel**
+from interpret.ext.glassbox import **DecisionTreeExplainableModel**
+
 **PFIExplainer** does not support local explanations
 
