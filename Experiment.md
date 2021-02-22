@@ -155,3 +155,11 @@ Azure Machine Learning allows you to track multiple metrics for your experiments
 You can use the **run.log_table** method to log a dictionary object to the run. A dictionary is sometimes referred to as an array and allows you to store key values along with associated data. 
 
 The **run.tag** method allows you to tag a run with a string key. The value is optional. 
+
+Drag the **Execute Python Script** module onto the designer canvas. This module can be added to a drag-and-drop designer pipeline to run Python code. This is useful in cases where an existing Azure Machine Learning designer module does not provide the functionality you need for your experiments. 
+
+The **run.log_table** method to the code editor. Azure Machine Learning allows you to track multiple metrics for your experiments. These metrics are stored in the experiment's run record for later retrieval and analysis. You can use the run.log_table method to log a dictionary object to the run. A dictionary is sometimes referred to as an array, and it allows you to store key values along with associated data. 
+
+The **run.start_logging** method is used for interactive runs, such as those executed from a Jupyter notebook. This method logs metrics to the experiment's run record. 
+
+The **ScriptRunConfig** class is used to create an object that contains both training environment configuration information as well as a training script. This ScriptRunConfig object can be used to initiate a fully configured training run as part of a machine learning experiment. 
