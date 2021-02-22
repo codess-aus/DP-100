@@ -163,3 +163,11 @@ The **run.log_table** method to the code editor. Azure Machine Learning allows y
 The **run.start_logging** method is used for interactive runs, such as those executed from a Jupyter notebook. This method logs metrics to the experiment's run record. 
 
 The **ScriptRunConfig** class is used to create an object that contains both training environment configuration information as well as a training script. This ScriptRunConfig object can be used to initiate a fully configured training run as part of a machine learning experiment. 
+
+Azure Machine Learning supports several locations for storing experiment output. Files can be saved to storage on the local compute instance, but these files do not persist across training runs. To store files for later analysis and review, you should use an Azure Machine Learning datastore, or you should write to the outputs or logs folders. *Files written to the ./logs folder are uploaded in real time*.
+
+*Files written to the outputs folder persist across experiments, but they are not uploaded in real time*.
+
+The **run.log("experiment_output",O)** method can be used to log scalar string or numerical values. This method does not upload output files. 
+
+The **run.get_file_names()** method is used to list all files that have been stored by the training run. 
