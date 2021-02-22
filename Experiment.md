@@ -147,3 +147,11 @@ The **run.complete** method is called after each iteration of an experiment. As 
 The **run.upload_file** method is used to serialize and upload the model to Azure Machine Learning Studio. You can then use Azure Machine Learning SDK to download the run at a future date. 
 
 **experiment.start_logging** method is used to initiate an interactive logging session for an experiment. 
+
+Azure Machine Learning allows you to track multiple metrics for your experiments. These metrics are stored in the experiment's run record for later retrieval and analysis, and the same metric can be logged within a run more than once. The **run.log** method can be used to log string or numerical scalar values and accepts three parameters, the metric name, the value to be logged, and an optional description. 
+
+**run.log_list** method allows you to log lists of values in an experiment run. A value list is comparable to a one-dimensional array. 
+
+You can use the **run.log_table** method to log a dictionary object to the run. A dictionary is sometimes referred to as an array and allows you to store key values along with associated data. 
+
+The **run.tag** method allows you to tag a run with a string key. The value is optional. 
