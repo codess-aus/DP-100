@@ -171,3 +171,22 @@ Azure Machine Learning supports several locations for storing experiment output.
 The **run.log("experiment_output",O)** method can be used to log scalar string or numerical values. This method does not upload output files. 
 
 The **run.get_file_names()** method is used to list all files that have been stored by the training run. 
+
+You should perform the following steps in order: 
+1. Register a new Azure Storage file container datastore. 
+2. Create a PipelineData object. Specify a name and output datastore. 
+3. Specify a PipelineData object for data output. 
+A PipelineData object can be used to pass data between steps in a pipeline. When you create a 
+PipelineData object, you must specify a name. If you do not provide a data store reference, the default 
+workspace datastore will be used. In this scenario, you are required to use a named datastore, so the first 
+action requires registering a new file container datastore. 
+Once a PipelineData object has been created, you can specify the output of a pipeline step to be written to 
+this object in the same way as you would to a local folder. In successive pipeline steps, you can then read 
+data by referencing the PipelineData object created in an earlier step. 
+You should not retrieve the default datastore from the current workspace. You can use the get() method to 
+retrieve a datastore by name. The following code retrieves a datastore named default-datastore: 
+my_datastore = Datastore.get(default-datastore) 
+You should not register a new dataset version for each pipeline pass. Azure Machine Learning allows you to 
+register a new dataset using an existing dataset name using versioning. A version is a bookmark of the data's 
+state and is useful in cases where new data needs to be used for retraining. By creating versions, you can 
+return to a specific version of the dataset if necessary. 
