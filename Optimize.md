@@ -169,3 +169,11 @@ instances in each class. This *works well when the datasets are imbalanced*.
 *Auto-ARIMA cannot be exported to ONNX models*
 
 **Linear SVC algorithm**. Linear SVC based classification models can be exported to ONNX models, but they are only suited for *data classification problems*. 
+
+The **get_output** method returns the best pipeline based on the primary metric when no parameters are specified. 
+
+The **summary** method gets a table containing a summary of all algorithms attempted, as well as their scores. 
+
+The **get_runs** method allows the experiment to retrieve a reference to a given execution. This code will fail when executed with the AutoMLRun class 
+ 
+The **get_metrices** method returns the metrics logged against the run. It does not provide details on the best run from an experiment. 
