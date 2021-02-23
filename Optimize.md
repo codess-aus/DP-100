@@ -163,3 +163,9 @@ instances in each class. This *works well when the datasets are imbalanced*.
 
 **log_loss metric**. This metric is used for logistic **regressions** and similar extensions, such as neural networks. This metric is not optimal for classification model evaluation. 
 
+**Decision Tree or Random Forest**. Both algorithms can be used to *evaluate regression problems*. They can also be exported to ONNX models. 
+
+**Auto-ARIMA** is only suited for time series forecasting models.  
+*Auto-ARIMA cannot be exported to ONNX models*
+
+**Linear SVC algorithm**. Linear SVC based classification models can be exported to ONNX models, but they are only suited for *data classification problems*. 
