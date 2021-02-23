@@ -163,3 +163,15 @@ AKS supports highly scalable compute options for Azure Machine Learning experime
 **Azure Machine Learning SDK** preview package and deploy your machine learning model as an app in Azure Functions. Once machine learning training is complete, you can create a Docker image based on the trained model. This model can then be deployed as an Azure Functions as containerized code.
 
 The Publish button creates a REST endpoint to the pipeline that other users/developers/data scientists can make calls to. It provides an endpoint with a key-based authentication.
+
+You should configure your VM size to the NCv2 series. In order for your model to run image classification 
+deep learning model leveraging CODA, you need to configure the VM that provides support for GPC's. 
+You should wt configure your VM to the OSv2 series. OSv2 series VMS are general purpose VMS and dont 
+support GPC's. For running image classification deep learning model leveraging CUDA, GPO-based graphic 
+processing is recommended. 
+You should wt configure your VM to the FS series. FS series VMS are compute optimized VMS and dont 
+support GPC's. These are good for CPU intensive workloads For running image classification deep learning 
+model leveraging CUDA, GPO-based graphic processing is recommended. 
+You should wt configure nur VM to the Lsv2_ Lsv2 series VMS are storaged optimized VMs. This type of 
+VMS is good for high disk 10 operations like hosting databases. For running image classification deep 
+learning model leveraging CUDA, GPO- based graphic processing is recommended. 
