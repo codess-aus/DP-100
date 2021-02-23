@@ -194,3 +194,11 @@ A **median stopping** policy calculates running averages across training runs th
 **BanditPolicy object** allows you to create an early termination policy which will terminate training jobs that are not likely to result in an accurate machine learning model. 
 As part of a BanditPolicy configuration, you can define the amount of slack between the best performing job and the job being evaluated. 
 
+**A global surrogate** is meant to be an interpretable approximation of **a black box model**. Black box models are those for which no explanation exists, which means that the 
+public does not know how the model makes its predictions. Once a surrogate model is trained, the mimic explainer interpretability technique can be used to interpret the model. 
+
+If you need to determine which fields - or features - have the largest impact on a model's predictions, you should use an interpretability technique that calculates and tracks feature importance. Azure Machine Learning supports the **PFI** for this purpose. PFI randomly shuffles features during model training and then calculates the impact on the model's performance. 
+
+SHAP is a model-specific interpretability technique used for linear models. SHAP explainers use calculates based on coalitional game theory. 
+
+Multi-label projects are used when multiple labels might be applied to a single image. For example, if an image included a dog and a cat, it may receive a label for each, dog and cat. 
