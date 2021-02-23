@@ -177,3 +177,9 @@ The **summary** method gets a table containing a summary of all algorithms attem
 The **get_runs** method allows the experiment to retrieve a reference to a given execution. This code will fail when executed with the AutoMLRun class 
  
 The **get_metrices** method returns the metrics logged against the run. It does not provide details on the best run from an experiment. 
+
+**MaxAbsScaler** ensures that each feature is scaled by its maximum absolute value. 
+
+**PCA** ensures linear dimensionality reduction. It uses singular value decompositions of the data and reduces the dimensional space. 
+
+**StandardScaleWrapper** ensures that the features are standardized by altering the dataset, removing the mean, and scaling to unit variance. 
