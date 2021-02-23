@@ -211,3 +211,13 @@ A global surrogate is meant to be an interpretable approximation of a black box 
 
 Random sampling is used to control the hyperparameter space that is used during model training. 
 
+You should deploy to an Azure Machine Learning compute cluster target for models that perform batch inference. In Azure Machine Learning, inference is also known as model scoring. Azure Machine Learning compute clusters are scalable machine learning platforms consisting of one or more CPU or GPU nodes. Compute clusters can scale from zero to hundreds of nodes, depending on workload. Compute clusters support the use of low-priority virtual machines (VMS), which do not have guaranteed availability. Using low-priority VMS can help reduce machine learning costs. 
+
+AKS target could theoretically be used to perform batch inference. However, AKS is designed for compute-intensive operations at scale, while batch inference requires compute resources on an intermittent basis. By contrast, batch inference requires the scalability that an Azure Machine Learning compute instance web service would not provide. 
+
+You should deploy to AKS target for models that perform real-time inference. In Azure Machine Learning, inference is also known as model scoring. Such models are trained on a data set and can analyze the data in real-time to provide predictions. For example, you could train a model on stock market data. Once trained, you could use the model to analyze stock prices in real-time and then make predictions on future prices. Inference clusters are built using Azure AKS and are sometimes referred to AKS clusters. 
+
+Azure machine learning compute clusters cannot be used for real-time inference because they use low-priority VMS and may not scale to the load required. Additionally, VM availability is not guaranteed, thus the provided service is not real-time. Similarly, Azure Machine Learning compute instance web services cannot be used for real-time inference because they typically lack hardware acceleration capabilities and do not scale to the workloads involved in real-time inference. 
+
+You should deploy to an Azure Machine Learning compute instance web service target for models that need to be tested and debugged. Azure Machine Learning compute instances are highly scalable cloud compute resources. Compute instances support AutoML and machine learning pipelines. Testing and debugging is best done on local resources or using low-cost cloud compute resources. The per-hour costs associated with Azure Machine Learning compute clusters and AKS make them poor candidates for testing and debugging. 
+
