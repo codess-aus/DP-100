@@ -221,3 +221,29 @@ Azure machine learning compute clusters cannot be used for real-time inference b
 
 You should deploy to an Azure Machine Learning compute instance web service target for models that need to be tested and debugged. Azure Machine Learning compute instances are highly scalable cloud compute resources. Compute instances support AutoML and machine learning pipelines. Testing and debugging is best done on local resources or using low-cost cloud compute resources. The per-hour costs associated with Azure Machine Learning compute clusters and AKS make them poor candidates for testing and debugging. 
 
+
+You should define a dataset monitor and configure a target dataset with a timeseries trait. Data drift is the 
+phenomenon where the data used to train a model diverges from later model input data. This can occur for 
+a variety of reasons, and the concern is that, if left unchecked, data drift can lead to model performance 
+degradation over time. 
+You can define a dataset monitor if you want to monitor for statistical changes and data drift in your 
+datasets. Each dataset monitor requires a baseline dataset, which is typically the dataset that was used to 
+initially train the model. You must also specify a target dataset, which is where new data is stored and 
+compared with the baseline dataset. This target dataset must have the timeseries trait set, which is typically 
+done by adding a timestamp column. Once the dataset monitor is created and configured, you can view 
+drift analysis information in the Azure Machine Learning portal. 
+You should not stream Azure Machine Learning metric information to Azure Event Hub. Azure Event Hub is a 
+stand-alone platform that, like Azure Monitor, can ingest logging and other information from a variety of 
+Azure Services. However, Event Hub is focused on data analysis to discover actionable insights, sometimes 
+referred to as business intelligence. 
+You should not use ScriptRunConfig to add logging functions to your training scripts. The ScriptRunConfig 
+class is used to create an object that contains both training environment configuration information, as well 
+as a training script. This ScriptRunConfig object can be used to initiate a fully configured training run as part 
+of a machine learning experiment. 
+You should not add logging functions to your pipeline with the Execute Python Script module. This module 
+can be added to a drag-and-drop designer pipeline to run Python code. This is useful in cases where an 
+existing Azure Machine Learning designer module does not provide the functionality you need for your 
+experiments. 
+
+
+
