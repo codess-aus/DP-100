@@ -183,3 +183,14 @@ The **get_metrices** method returns the metrics logged against the run. It does 
 **PCA** ensures linear dimensionality reduction. It uses singular value decompositions of the data and reduces the dimensional space. 
 
 **StandardScaleWrapper** ensures that the features are standardized by altering the dataset, removing the mean, and scaling to unit variance. 
+
+A **truncation selection** policy is an early termination policy that cancels a percentage of low-performing runs. Each run's performance is evaluated using a primary metric, 
+and the percentage of jobs to cancel is specified when you define the policy. As part of its calculations, a truncation selection policy considers previous performance for runs with less run time. 
+
+A **median stopping** policy calculates running averages across training runs that cancels any runs whose performance falls below the median of the running average. 
+
+**Bayesian sampling** method selects hyperparameters based on the performance of previous runs. The Bayesian sampling method does not support early termination. 
+
+**BanditPolicy object** allows you to create an early termination policy which will terminate training jobs that are not likely to result in an accurate machine learning model. 
+As part of a BanditPolicy configuration, you can define the amount of slack between the best performing job and the job being evaluated. 
+
