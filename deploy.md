@@ -211,3 +211,9 @@ You should not use pipeline_run.get_status(). The get_status method retrieves th
 You should not use pipeline_run.get_graph(). The get_graph renders the graph of the pipeline run. It will not provide streaming logs while the pipeline is being executed. 
 
 You should not use pipeline_run.get_steps(). The get_steps method lists the generated step runs. The method provides a list of all the pipeline steps that have completed or have started running. 
+
+You should include the init() and run(mini_batch) functions. You should use init() for any costly or common preparation for later inference. You should use run(mini_batch) to write code that would evaluate and append the outputs of the evaluation. 
+
+You should not include the execute(mini_batch), load(), or evaluate(mini_batch) functions. They are not valid functions for an entry script. 
+
+
