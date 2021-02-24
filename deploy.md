@@ -196,3 +196,10 @@ Token-based authentication relies on temporary tokens. Once enabled, users or se
 
 You should create a parameter for your dataset. This option allows consumers to provide a dataset to your pipeline at runtime. This is useful in scenarios where a model is trained on a dataset but is used to formulate predictions on new data. You can parameterize a pipeline by using the dataset module. 
 
+You should create a parameter for your dataset. This option allows consumers to provide a dataset to your pipeline at runtime. This is useful in scenarios where a model is trained on a dataset but is used to formulate predictions on new data. You can parameterize a pipeline by using the dataset module. 
+
+You connect a dataset to a pipeline when you need to provide data input. This process is manual and does not occur automatically at runtime. 
+
+A web service is defined when you publish a pipeline, and an HTTP endpoint is created that external applications and services can consume. 
+
+The Convert to Dataset module is used to ensure that data normalization changes can be used in other pipelines. Input data to this module must be tabular. 
