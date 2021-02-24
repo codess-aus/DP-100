@@ -216,4 +216,9 @@ You should include the init() and run(mini_batch) functions. You should use init
 
 You should not include the execute(mini_batch), load(), or evaluate(mini_batch) functions. They are not valid functions for an entry script. 
 
+In Azure Machine Learning, inference is also known as model scoring. Such models are trained on a dataset and can then analyze data in real-time to provide predictions. Once your pipeline has trained a model, you convert the training pipeline into a real-time inference pipeline. This adds the supporting Web Service Input and Web Service Output modules to your pipeline. 
 
+An endpoint is the port-to-service mapping that is created when you deploy a web service. As part of deploying a real-time endpoint, you are required to specify a compute target, and publishing an autoscaling inference pipeline is only supported on AKS inference clusters. If you have not created an AKS cluster prior to this step, you will need to define one before you can complete the deployment. Once the real-time endpoint has been deployed, applications and services can access the endpoint as they would any other 
+REST API. 
+
+You should not set the pipeline as the default for the endpoint. **Every endpoint has one default pipeline**. When you publish a new pipeline under an existing endpoint, you can choose to make it the default pipeline for that endpoint. 
