@@ -203,3 +203,11 @@ You connect a dataset to a pipeline when you need to provide data input. This pr
 A web service is defined when you publish a pipeline, and an HTTP endpoint is created that external applications and services can consume. 
 
 The Convert to Dataset module is used to ensure that data normalization changes can be used in other pipelines. Input data to this module must be tabular. 
+
+The wait_for_completion method is used to monitor the status and by default, it will stream the logs to the output determined by the sys.stdout configuration. 
+
+You should not use pipeline_run.get_status(). The get_status method retrieves the status of the run, however, it will not provide streaming logs while the pipeline is being executed. 
+
+You should not use pipeline_run.get_graph(). The get_graph renders the graph of the pipeline run. It will not provide streaming logs while the pipeline is being executed. 
+
+You should not use pipeline_run.get_steps(). The get_steps method lists the generated step runs. The method provides a list of all the pipeline steps that have completed or have started running. 
