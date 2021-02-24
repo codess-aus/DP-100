@@ -193,3 +193,6 @@ You should configure key authentication only for ACI compute targets. ACI allows
 You should configure **key or token authentication for AKS compute targets**. AKS supports highly scalable compute options for Azure Machine Learning experiments. In addition to supporting multiple-node clusters, AKS can be used for experiments that require hardware acceleration via CPU or Field-Programmable Gate Arrays (FPGA). Finally, AKS can dynamically scale compute availability based on workload. 
 
 Token-based authentication relies on temporary tokens. Once enabled, users or services that connect to your deployed model must submit an Azure Machine Learning JSON Web Token in order to be allowed access. Each token has a limited lifetime, and expired tokens must be refreshed prior to making new calls. 
+
+You should create a parameter for your dataset. This option allows consumers to provide a dataset to your pipeline at runtime. This is useful in scenarios where a model is trained on a dataset but is used to formulate predictions on new data. You can parameterize a pipeline by using the dataset module. 
+
