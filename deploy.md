@@ -164,14 +164,26 @@ AKS supports highly scalable compute options for Azure Machine Learning experime
 
 The Publish button creates a REST endpoint to the pipeline that other users/developers/data scientists can make calls to. It provides an endpoint with a key-based authentication.
 
-You should configure your VM size to the NCv2 series. In order for your model to run image classification 
-deep learning model leveraging CODA, you need to configure the VM that provides support for GPC's. 
-You should wt configure your VM to the OSv2 series. OSv2 series VMS are general purpose VMS and dont 
-support GPC's. For running image classification deep learning model leveraging CUDA, GPO-based graphic 
-processing is recommended. 
-You should wt configure your VM to the FS series. FS series VMS are compute optimized VMS and dont 
-support GPC's. These are good for CPU intensive workloads For running image classification deep learning 
-model leveraging CUDA, GPO-based graphic processing is recommended. 
-You should wt configure nur VM to the Lsv2_ Lsv2 series VMS are storaged optimized VMs. This type of 
-VMS is good for high disk 10 operations like hosting databases. For running image classification deep 
-learning model leveraging CUDA, GPO- based graphic processing is recommended. 
+**NCv2 series**: In order for your model to run image classification deep learning model leveraging **CUDA**, you need to configure the VM that provides support for GPU's. 
+
+**DSv2 series** VMS are **general purpose VMS** and dont support GPU's. 
+
+**For running image classification deep learning model leveraging CUDA, GPU-based graphic processing is recommended.**
+
+**FS series** VMS are **compute optimized** VMS and don't support GPU's. These are good for CPU intensive workloads.
+
+**Lsv2 series** VMS are **storaged optimized** VMs. This type of VMS is good for high disk I0 operations like hosting databases.
+
+You should create an **inference cluster** to deploy trained models that will provide **real-time predictive services at scale**. In Azure Machine Learning, inference is also known as model scoring. Such models are trained on a data set and can analyze the data in real-time to provide predictions. For example, you could train a model on stock market data. Once trained, you could use the model to analyze stock prices in real-time and then make predictions on future prices. 
+
+**Inference clusters are built using Azure Kubernetes Service (AKS) and are sometimes referred to as AKS clusters**. 
+
+**Compute clusters cannot be used with models that offer predictive services because they use low-priority VMS and may not scale to the load required**. Additionally, **inference clusters are used for real-time predictive services** and computer cluster VM availability is not guaranteed, thus the provided service is not real-time. Similarly, *attached compute resources cannot be used for real-time inference because they do not scale to the workloads involved in real-time inference*. 
+
+You should create a **compute cluster to support scalable, on-demand processing using low-priority VMs**. Azure Machine Learning compute clusters are scalable machine learning platforms consisting of one or more CPU or CPU nodes. Compute clusters can scale from zero to hundreds of nodes, depending on workload. Compute clusters support the use of low-priority VMS, which do not have guaranteed availability. Using low-priority VMS can help reduce machine learning costs. 
+
+AKS target could theoretically be used to Support scalable, on-demand processing. However, AKS is designed for compute-intensive operations at scale and is best suited for real-time predictive services. 
+
+Attached compute should not be used to support scalable, on-demand processing because it does not provide scalability. 
+
+You should use attached compute to use Azure Databricks clusters. Attached compute supports linking to on-cloud Azure compute resources, including VMS and Azure Databricks clusters. Azure Databricks is a cloud-based Apache Spark-based analytics platform. Databricks clusters are often used to run machine learning pipelines. You might choose Azure Databricks if you are collaborating with other machine learning teams, or because it is based on the open-source Apache Spark ecosystem. Neither inference cluster nor compute clusters can use Azure Databricks clusters. 
