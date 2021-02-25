@@ -222,3 +222,9 @@ An endpoint is the port-to-service mapping that is created when you deploy a web
 REST API. 
 
 You should not set the pipeline as the default for the endpoint. **Every endpoint has one default pipeline**. When you publish a new pipeline under an existing endpoint, you can choose to make it the default pipeline for that endpoint. 
+
+The Publish button will not deploy the model as a web service endpoint. To deploy the model as a web service endpoint, you need to navigate to the Models menu on ML studio, select the model you want to deploy, and click the Deploy button. 
+
+The Publish button creates a REST endpoint to the pipeline that other users/developers/data scientists can make calls to. It provides an endpoint with a key-based authentication. 
+
+The Publish button does not run the pipeline. To run the pipeline against the test dataset, which is part of the model, you need to click Submit on the designer canvas. 
